@@ -15,7 +15,7 @@ export default class World {
         this.scene.add(this.mesh)
     }
 
-    updateMesh(){
+    update(){
         // console.log("updating mesh");
         this.mesh.rotation.x += 0.01
         this.mesh.rotation.y += 0.01
