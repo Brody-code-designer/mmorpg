@@ -3,7 +3,7 @@ import Experience from '../../Experience.js'
 
 export default class Dragon {
     constructor(){
-        this.experience = new Experience
+        this.experience = new Experience()
         this.scene = this.experience.scene
         this.resources = this.experience.resources
         this.time = this.experience.time
@@ -17,9 +17,14 @@ export default class Dragon {
 
     setModel() {
         this.model = this.resource.scene
-        this.model.position.set(0, 0, -5) 
-        console.log(this.model);
+        this.model.position.set(0, 0, -3) 
         this.scene.add(this.model)
+
+        this.model.traverse( (child) => {
+            if( child instanceof THREE.Mesh) {
+                child.castShadow = true
+            }
+        })
     }
 
     setAnimation(){

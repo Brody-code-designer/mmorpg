@@ -1,5 +1,4 @@
 import * as THREE from 'three'
-import { NoToneMapping } from 'three'
 import Experience from './Experience.js'
 
 export default class Renderer {

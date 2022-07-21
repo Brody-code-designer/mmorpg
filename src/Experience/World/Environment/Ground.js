@@ -17,8 +17,9 @@ export default class Ground {
       roughness: 1,
     });
 
-    const plane = new THREE.Mesh(geometry, material);
-    plane.rotation.x = -Math.PI * 0.5;
-    this.scene.add(plane);
+    this.plane = new THREE.Mesh(geometry, material);
+    this.plane.rotation.x = -Math.PI * 0.5;
+    this.plane.receiveShadow = true
+    this.scene.add(this.plane);
   }
 }
