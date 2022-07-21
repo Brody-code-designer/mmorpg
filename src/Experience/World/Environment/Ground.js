@@ -10,9 +10,9 @@ export default class Ground {
   }
 
   setInstance() {
-    const geometry = new THREE.PlaneGeometry(10, 10);
+    const geometry = new THREE.PlaneGeometry(1000, 1000);
     const material = new THREE.MeshStandardMaterial({
-      color: "#4f2700",
+      color: "#876445",
       metalness: 0,
       roughness: 1,
     });

@@ -6,5 +6,6 @@ export default class Environment {
         this.lights = new Lights()
         this.ground = new Ground()
         
+        
     }
 }

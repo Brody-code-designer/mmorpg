@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import { NoToneMapping } from 'three'
 import Experience from './Experience.js'
 
 export default class Renderer {
@@ -8,6 +9,11 @@ export default class Renderer {
         this.sizes = this.experience.sizes
         this.scene = this.experience.scene
         this.camera = this.experience.camera
+
+        this.debug = this.experience.debug
+        if(this.debug.active){
+            this.debugFolder = this.debug.ui.addFolder('renderer')
+        }
 
         this.setInstance()
     }
@@ -25,6 +31,25 @@ export default class Renderer {
         this.instance.shadowMap.type = THREE.PCFSoftShadowMap;
         this.instance.setClearColor('#211d20')
         this.instance.setSize(window.innerWidth, window.innerHeight)
+
+        //debug
+        if(this.debug.active){
+            this.debugFolder
+            .add(this.instance, 'toneMapping')
+            .name('toneMapping')
+            .options([THREE.CineonToneMapping, THREE.NoToneMapping])
+            
+
+            this.debugFolder
+            .add(this.instance, 'toneMappingExposure')
+            .name('toneMappingExposure')
+            .min(0)
+            .max(5)
+            .step(0.001)
+
+
+        }
+
     }
 
     resize() {

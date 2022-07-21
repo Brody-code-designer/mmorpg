@@ -17,7 +17,8 @@ export default class Dragon {
 
     setModel() {
         this.model = this.resource.scene
-        // this.model.scale.set(0.02, 0.02, 0.02)
+        this.model.position.set(0, 0, -5) 
+        console.log(this.model);
         this.scene.add(this.model)
     }
 
