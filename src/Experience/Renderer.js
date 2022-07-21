@@ -35,10 +35,18 @@ export default class Renderer {
         //debug
         if(this.debug.active){
             this.debugFolder
+            .add(this.instance, 'physicallyCorrectLights')
+            .name('physicallyCorrectLights')
+
+            this.debugFolder
+            .add(this.instance, 'outputEncoding')
+            .name('outputEncoding')
+            .options([THREE.sRGBEncoding, THREE.LinearEncoding, THREE.BasicDepthPacking, THREE.RGBADepthPacking])
+            
+            this.debugFolder
             .add(this.instance, 'toneMapping')
             .name('toneMapping')
-            .options([THREE.CineonToneMapping, THREE.NoToneMapping])
-            
+            .options([THREE.CineonToneMapping, THREE.LinearToneMapping, THREE.ReinhardToneMapping, THREE.ACESFilmicToneMapping, THREE.NoToneMapping])
 
             this.debugFolder
             .add(this.instance, 'toneMappingExposure')
@@ -47,7 +55,10 @@ export default class Renderer {
             .max(5)
             .step(0.001)
 
-
+            this.debugFolder
+            .add(this.instance.shadowMap, 'type')
+            .name('shadowMap Type')
+            .options([THREE.PCFSoftShadowMap])
         }
 
     }
