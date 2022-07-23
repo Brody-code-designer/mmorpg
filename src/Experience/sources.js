@@ -12,6 +12,11 @@ export default [
         ]
     },
     {
+        name: 'redDirtColorTexture',
+        type: 'texture',
+        path: 'textures/red-dirt/red_mud_stones_diff_1k.jpg'
+    },
+    {
         name: 'dragonModel',
         type: 'gltfModel',
         path: 'models/dragon/Dragon.gltf'

@@ -12,7 +12,7 @@ export default class World {
         //Once the resources is loaded
         this.resources.on('ready', () => {
             this.dragon = new Dragon()
-            this.environment = new Environment
+            this.environment = new Environment()
             this.helpers = new Helpers()
         })
     }
