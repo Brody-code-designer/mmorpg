@@ -7,6 +7,7 @@ import Time from "./Utils/Time.js";
 import Resources from "./Utils/Resources.js";
 import sources from "./sources.js";
 import Debug from "./Utils/Debug.js";
+import FPS from "./Controls/FPS.js";
 
 // singleton to access the Experience
 let instance = null;
@@ -31,6 +32,7 @@ export default class Experience {
     this.scene = new THREE.Scene();
     this.resources = new Resources(sources);
     this.camera = new Camera();
+    this.fpsControls = new FPS()
     this.renderer = new Renderer();
     this.world = new World();
 
@@ -51,7 +53,7 @@ export default class Experience {
   }
 
   update() {
-    this.camera.update();
+    // this.camera.update();
     this.world.update();
     this.renderer.update();
   }

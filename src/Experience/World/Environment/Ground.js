@@ -30,8 +30,6 @@ export default class Ground {
     this.textures.normal.repeat.set(20, 20)
     this.textures.normal.wrapS = THREE.RepeatWrapping
     this.textures.normal.wrapT = THREE.RepeatWrapping 
-    
-    console.log(this.textures.color);
   }
   setMaterial(){
     this.material = new THREE.MeshStandardMaterial({
