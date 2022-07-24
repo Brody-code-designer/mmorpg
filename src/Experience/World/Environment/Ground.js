@@ -22,13 +22,21 @@ export default class Ground {
 
     this.textures.color = this.resources.items.redDirtColorTexture
     this.textures.color.encoding = THREE.sRGBEncoding
-    // this.textures.color.repeat.set(1.5)
-    // this.textures.normal.wrapS = THREE.RepeatWrapping
-    // this.textures.normal.wrapT = THREE.RepeatWrapping    
+    this.textures.color.repeat.set(20, 20)
+    this.textures.color.wrapS = THREE.RepeatWrapping
+    this.textures.color.wrapT = THREE.RepeatWrapping 
+
+    this.textures.normal = this.resources.items.redDirtNormalTexture
+    this.textures.normal.repeat.set(20, 20)
+    this.textures.normal.wrapS = THREE.RepeatWrapping
+    this.textures.normal.wrapT = THREE.RepeatWrapping 
+    
+    console.log(this.textures.color);
   }
   setMaterial(){
     this.material = new THREE.MeshStandardMaterial({
-      map: this.textures.color
+      map: this.textures.color,
+      normalMap: this.textures.normal
     })
   }
   setMesh(){
